@@ -83,7 +83,7 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 // pair programming solution with Andra Steele with assistance from Camilla Rees
-const addValues = (arr, value) =>  arr.push(value);
+const addValues = (arr, value) => arr.push(value);
 
 const addNumbers = (num, arr, times, callback) => {
   for(let i = 0; i < times; i++) {
@@ -111,9 +111,17 @@ The inventory is formatted like this:
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
+// pair programming solution with Andra Steele with assistance from Camilla Rees
 const createList = (availableItems) => {
-  // Solution code here...
+  const groceryList = [];
+  availableItems.forEach((item) => {
+    if (item.available === true){
+      groceryList.push(item.name);
+    }
+  });
+  return groceryList;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7

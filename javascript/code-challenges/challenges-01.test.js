@@ -57,12 +57,13 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
-const greeting = (word) => {
-  // Solution code here...
-};
+// pair programming solution with Andra Steele
+const greeting = (word) => `${word.toUpperCase()}!`;
 
 const speaker = (words, callback) => {
-  // Solution code here...
+  let newArr = [];
+  words.forEach(element => newArr.push(callback(element)));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,13 +82,16 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr, value) => {
-  // Solution code here...
-};
+// pair programming solution with Andra Steele with assistance from Camilla Rees
+const addValues = (arr, value) =>  arr.push(value);
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for(let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 

@@ -47,7 +47,10 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  // You may choose to complete this challenge using a for loop, for...in syntax, or for...of syntax.
+  // I chose not to.
+  const powers = arr.map(currentValue => Math.pow(2, currentValue));
+  return powers;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,7 +60,9 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  const powers = [];
+  arr.forEach(currentValue => powers.push(Math.pow(2, currentValue)));
+  return powers;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +72,9 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  // is there an echo in here?
+  const powers = arr.map(currentValue => Math.pow(2, currentValue));
+  return powers;
 };
 
 /* ------------------------------------------------------------------------------------------------

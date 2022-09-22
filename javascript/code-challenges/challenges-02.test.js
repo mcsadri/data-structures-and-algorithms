@@ -103,7 +103,8 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  const parities = arr.forEach(currentValue => {
+  const parities = [];
+  arr.forEach(currentValue => {
     if (Number.isInteger(currentValue)){
       if (currentValue % 2 ===0) {
         parities.push('even');
@@ -160,7 +161,8 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  const names = arr.map(currentValue => currentValue.ability.name);
+  return names;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -207,8 +209,13 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  const statTotals = arr.map(currentValue => ({
+    name: currentValue.stat.name,
+    total: currentValue.effort + currentValue.baseStat
+  }));
+  return statTotals;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -301,14 +308,14 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return an array containing only the ability names', () => {
     expect(extractAbilities(snorlaxAbilities.abilities)).toStrictEqual(['gluttony', 'cute charm', 'immunity']);
     expect(extractAbilities(snorlaxAbilities.abilities).length).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },

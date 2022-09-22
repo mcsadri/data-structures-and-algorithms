@@ -103,9 +103,10 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  const parities = arr.forEach(currentValue => {
+  const parities = [];
+  arr.forEach(currentValue => {
     if (Number.isInteger(currentValue)){
-      if (currentValue % 2 ===0) {
+      if (currentValue % 2 === 0) {
         parities.push('even');
       } else {
         parities.push('odd');

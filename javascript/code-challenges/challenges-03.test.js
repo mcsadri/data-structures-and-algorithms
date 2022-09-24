@@ -32,7 +32,7 @@ Write a function named containsAnd that, given an array of strings as input, use
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
-const containsAnd = (arr) => arr.filter(currentValue => (currentValue.search('and') >= 0));
+const containsAnd = (arr) => arr.filter(currentValue => currentValue.search('and') >= 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -42,9 +42,7 @@ Write a function named oddValues that, given an array of integers as input, uses
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const oddValues = (arr) => {
-  // Solution code here...
-};
+const oddValues = (arr) => arr.filter(currentValue => (currentValue % 2 === 1));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -54,9 +52,7 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-};
+const notInFirstArray = (forbiddenValues, arr) => arr.filter(currentValue => !forbiddenValues.includes(currentValue));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal

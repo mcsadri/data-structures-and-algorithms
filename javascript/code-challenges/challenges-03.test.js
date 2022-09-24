@@ -154,9 +154,7 @@ const characters = [
   },
 ];
 
-const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
-};
+const getCharactersWithoutChildren = (arr) => arr.filter(currentValue => !Array.isArray(currentValue.children));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -166,9 +164,7 @@ Write a function named evenOddNumericValues that, given an array as input, uses 
 For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
 ------------------------------------------------------------------------------------------------ */
 
-const evenOddNumericValues = (arr) => {
-  // Solution code here...
-};
+const evenOddNumericValues = (arr) => arr.filter(filterValue => Number.isInteger(filterValue)).map(mapValue => mapValue % 2 === 0 ? 'even' : 'odd');
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -270,14 +266,14 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing characters who do not have children', () => {
     expect(getCharactersWithoutChildren(characters)).toStrictEqual([ { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' } ]);
     expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove non-integers and return "even" or "odd', () => {
     expect(evenOddNumericValues(['Gregor', 2, 4, 1])).toStrictEqual(['even', 'even', 'odd']);
     expect(evenOddNumericValues(['Gregor', 2, 4, 1]).length).toStrictEqual(3);

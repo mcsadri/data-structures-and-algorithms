@@ -20,9 +20,8 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr) => arr.reduce((sum, cValue, cIndex) => {
-  sum += cValue;
-  return sum;
+const addValues = (arr) => arr.reduce((sum, cValue) => {
+  return sum += cValue;
 },0);
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,9 +36,8 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => arr.reduce((sum, cValue, cIndex) => {
-  sum += cValue.purchasePrice;
-  return sum;
+const addPurchases = (arr) => arr.reduce((sum, cValue) => {
+  return sum += cValue.purchasePrice;
 },0);
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,9 +48,10 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
-  // Solution code here...
-};
+const countNumberOfElements = (arr) => arr.reduce((sum) => {
+  sum++;
+  return sum;
+},0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -110,9 +109,10 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => {
-  // Solution code here...
-};
+const returnNames = (arr) => arr.reduce((names, cValue) => {
+  names.push(cValue.name);
+  return names;
+}, []);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -122,9 +122,9 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
-const reversedString = (str) => {
-  // Solution code here...
-};
+// attempted solution derived from https://stackoverflow.com/questions/55427185/reverse-string-in-javascript-using-reduce-method
+// const reversedString = (str) => {str.reduce((acc, cValue) => cValue+acc, '').split('');};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

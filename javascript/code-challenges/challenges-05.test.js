@@ -122,9 +122,14 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
-// attempted solution derived from https://stackoverflow.com/questions/55427185/reverse-string-in-javascript-using-reduce-method
-// const reversedString = (str) => {str.reduce((acc, cValue) => cValue+acc, '').split('');};
-
+//solution from https://dev.to/sarah_chima/reverse-a-string-four-javascript-solutions-2nbm
+const reversedString = (str) => {
+  const array = str.split('');
+  const reversedStr = array.reduce((rts, character) => {
+    return character + rts;
+  }, '');
+  return reversedStr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -175,8 +180,17 @@ const characters = [
   },
 ];
 
-const countNumberOfChildren = (arr) => {
-  // Solution code here...
+// countNumberOfChildren(characters)
+
+
+// const countNumberOfChildren = (arr) => {
+//   // Solution code here...
+// };
+
+const countNumberOfChildren = (arr) => {arr.reduce((kids, cValue, index) => {
+  kids += cValue.children.length();
+  return kids;
+}, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -323,7 +337,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });

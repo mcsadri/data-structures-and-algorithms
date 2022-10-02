@@ -109,6 +109,11 @@ let starWarsData = [{
   gender: 'female'
 }];
 
+// const returnNames = (arr) => arr.reduce((names, cValue) => {
+//   names.push(cValue.name);
+//   return names;
+// }, []);
+
 const returnNames = (arr) => arr.reduce((names, cValue) => {
   names.push(cValue.name);
   return names;
@@ -180,16 +185,9 @@ const characters = [
   },
 ];
 
-// countNumberOfChildren(characters)
-
-
-// const countNumberOfChildren = (arr) => {
-//   // Solution code here...
-// };
-
-const countNumberOfChildren = (arr) => {arr.reduce((kids, cValue, index) => {
-  kids += cValue.children.length();
-  return kids;
+// solution with assistance from Hexx King
+const countNumberOfChildren = (arr) => {return arr.reduce((count, cValue) => {
+  return cValue.children ? count + cValue.children.length : count;
 }, 0);
 };
 

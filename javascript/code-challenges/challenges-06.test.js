@@ -23,7 +23,7 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => arr.map(currentValue => currentValue.name.split('').reverse().join(''));
-// solution borrowed from https://stackoverflow.com/questions/1611427/reversing-a-string-in-javascript
+// solution assistance for join() from https://stackoverflow.com/questions/1611427/reversing-a-string-in-javascript
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -64,9 +64,7 @@ addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
-const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
-};
+const addBirthYearProperty = (obj, year) => obj.yearBorn = year;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -81,9 +79,7 @@ setStatusAsAuthor(people);
 console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
-const setStatusAsAuthor = (people) => {
-  // Solution code here...
-};
+const setStatusAsAuthor = (people) => people.forEach(person => person.isAuthor = true);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -100,10 +96,7 @@ append(a, b);
 console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
-const append = (arr1, arr2) => {
-  // Solution code here...
-
-};
+const append = (arr1, arr2) => arr2.forEach(cVal => arr1.push(cVal));
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -151,7 +144,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add a property to every object in an array', () => {
     const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
     setStatusAsAuthor(a);
@@ -162,7 +155,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should append the second array to the first', () => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];

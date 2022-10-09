@@ -97,6 +97,7 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => arr2.forEach(cVal => arr1.push(cVal));
+// const append = (arr1, arr2) => arr1 = arr1.push(...arr2); // alt solution with ... (aka spread) operator from Gaz
 
 /* ------------------------------------------------------------------------------------------------
 TESTS

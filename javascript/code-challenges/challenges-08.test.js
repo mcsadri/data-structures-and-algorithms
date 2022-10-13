@@ -52,8 +52,19 @@ let characters = [
   }
 ];
 
+// const sortByChildren = (charArray) => {
+//   // Solution code here...
+// };
+
+// attempted solution derived from https://levelup.gitconnected.com/sort-array-of-objects-by-two-properties-in-javascript-69234fa6f474
 const sortByChildren = (charArray) => {
-  // Solution code here...
+  charArray.sort((a, b) => {
+    if (a.children.length === b.children.length) {
+      return a.house < b.house ? -1 : 1;
+    } else {
+      return a.children.length < b.children.length ? -1 : 1;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,7 +124,8 @@ Return an array containing all the matches.
 const isCapitalized = (str) => {
   let matches = str.match(/[A-Z][a-zA-Z]*/g);
   if (matches === null) {
-    matches = [];}
+    matches = [];
+  }
   return matches;
 };
 

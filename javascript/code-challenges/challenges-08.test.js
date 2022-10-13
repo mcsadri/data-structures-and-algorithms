@@ -59,12 +59,15 @@ const sortByChildren = (charArray) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not. 
+Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not.
 
 ------------------------------------------------------------------------------------------------ */
 
+// pair programming solution with Andra Steele
 const containsW = (str) => {
-  // Solution code here...
+  let regex = /w/;
+  console.log('regex: ', regex);
+  return regex.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,8 +82,10 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
+// pair programming solution with Andra Steele
 const isNum = (input) => {
-  // Solution code here...
+  let regex = /[0-9]/;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,8 +95,10 @@ Write a function named containsWorld that takes in a string or number of any len
 
 ------------------------------------------------------------------------------------------------ */
 
+// pair programming solution with Andra Steele
 const containsWorld = (input) => {
-  // Solution code here...
+  let regex = /(world)/;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,8 +109,12 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
+// pair programming solution with Andra Steele
 const isCapitalized = (str) => {
-  // Solution code here...
+  let matches = str.match(/[A-Z][a-zA-Z]*/g);
+  if (matches === null) {
+    matches = [];}
+  return matches;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,9 +123,13 @@ CHALLENGE 6
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
-const citiesAtoJ = (arr) => {
-  // Solution code here...
-};
+// const citiesAtoJ = (arr) => {
+//   let matches = arr.filter(city => city.match(/^[A-J][a-zA-Z0-9]*\s*/g));
+//   console.log(matches);
+//   return matches;
+// };
+
+const citiesAtoJ = (arr) => arr.filter(city => city.match(/^[A-J][a-zA-Z0-9]*\s*/g));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

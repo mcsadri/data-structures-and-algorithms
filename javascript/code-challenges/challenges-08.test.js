@@ -52,19 +52,10 @@ let characters = [
   }
 ];
 
-// const sortByChildren = (charArray) => {
-//   // Solution code here...
-// };
-
-// attempted solution derived from https://levelup.gitconnected.com/sort-array-of-objects-by-two-properties-in-javascript-69234fa6f474
+// attempted solution adapted from https://stackoverflow.com/questions/6913512/how-to-sort-an-array-of-objects-by-multiple-fields
 const sortByChildren = (charArray) => {
-  charArray.sort((a, b) => {
-    if (a.children.length === b.children.length) {
-      return a.house < b.house ? -1 : 1;
-    } else {
-      return a.children.length < b.children.length ? -1 : 1;
-    }
-  });
+  charArray.sort((a, b) => a.children.length - b.children.length || a.name.localeCompare(b.name));
+  return charArray;
 };
 
 /* ------------------------------------------------------------------------------------------------

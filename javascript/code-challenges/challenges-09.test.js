@@ -8,9 +8,8 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => {
-  // Solution code here...
-};
+// solution from MDN web docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max#getting_the_maximum_element_of_an_array
+const maxInArray = (arr) => Math.max.apply(null, arr);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,21 +23,15 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true
 };
 
-const getCourseKeys = (obj) => {
-  // Solution code here...
-};
+const getCourseKeys = (obj) => Object.keys(obj);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Write a function named checkValues that takes in an object and a value and returns true if the value is in the object.
-
-
 ------------------------------------------------------------------------------------------------ */
 
-const checkValues = (obj, value) => {
-  // Solution code here...
-};
+const checkValues = (obj, value) => Object.values(obj).includes(value);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -59,11 +52,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
-  // Solution code here...
-};
-
-
+const updateNumbers = (obj) => Object.entries(obj).map(cValue => cValue[0] + ': ' + cValue[1]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -116,7 +105,7 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  houses = arr.map(character => Object.entries(character).pop().pop());
   return houses;
 };
 
@@ -132,10 +121,7 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
-};
+// const hasChildrenValues = (arr, character) => Object.values(arr).find(element => element.name === character).hasOwn(character.children);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

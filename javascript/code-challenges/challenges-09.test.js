@@ -8,6 +8,7 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
+
 // solution from MDN web docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max#getting_the_maximum_element_of_an_array
 const maxInArray = (arr) => Math.max.apply(null, arr);
 
@@ -132,9 +133,20 @@ Write a function named hasChildrenEntries that is similar to your hasChildrenVal
 The input and output of this function are the same as the input and output from challenge 3.
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
-};
+// const hasChildrenEntries = (arr, character) => Object.entries(arr).filter(element => element[1].name === character)
+
+// const hasChildrenEntries = (arr, character) => Object.entries(arr).forEach(element => element.forEach(person => person[1].name === character && person[1].children ? true : false));
+
+// attempted solution with assistance from Hexx King
+// const hasChildrenEntries = (arr, character, children=false) => {
+//   Object.entries(arr).forEach(element => {
+//     element.forEach(person => {
+//       if (person.name === character) {
+//         children = person.children.length > 0 ? true : false;
+//       }
+//     });
+//   });
+// }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal

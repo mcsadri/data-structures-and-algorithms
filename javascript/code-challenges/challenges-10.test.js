@@ -34,6 +34,11 @@ const findMax = (matrix) => {
   return Math.max.apply(null, maxArr);
 };
 
+// alternative solution from Ethan Luxton via class code challenge review
+// const findMax = (matrix) => {
+//   Math.max(...matrix.map(idx => Math.max(...idx)));
+// };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -104,6 +109,12 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 // const salesData = (hours, data) => data.forEach(cValue => {sales: `${cValue} cookies`, time: `${hours[data.indexOf(cValue)]}`});
 
+// solution from Ethan Luxton via class code challenge review
+const salesData = (hours, data) => {
+  let newArr = [];
+  hours.forEach((hour, i) => newArr.push({sales: data[i] + ' cookies', time: hour }));
+  return newArr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -126,9 +137,8 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) => {
-  // Solution code here...
-};
+// this is a lame solution using brittle code
+const howManyTreats = (arr) => arr[2].items[1].quantity;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -149,7 +159,8 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  let result = board[row][col] === '#' ? 'hit' : 'miss';
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -285,7 +296,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const battleshipData = [
     ['#', ' ', '#', ' '],
     ['#', ' ', '#', ' '],

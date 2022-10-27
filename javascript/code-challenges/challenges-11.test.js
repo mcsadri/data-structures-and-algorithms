@@ -33,8 +33,19 @@ Note: You might need to use the same method more than once.
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
-const count = (target, input) => {
+// const count = (target, input) => {
+//   console.log(input.map(array => array.filter(value => value === target).length()));
+// };
 
+// solution via code challenge class review w/ Stacy Yu
+const count = (target, input) => {
+  let count = 0;
+  input.map(values => {
+    values.map((value) => {
+      value === target && count++;
+    });
+  });
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,8 +58,15 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
+// solution via code challenge class review w/ Stacy Yu
 const totalSum = (input) => {
-  // Solution code here...
+  let sum = 0;
+  input.map(values => {
+    values.map((value) => {
+      sum += value;
+    });
+  });
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,8 +81,15 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
+// solution via code challenge class review w/ Ethan Luxton
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let newArr = [];
+  for (let element of input) {
+    let innerArr = [];
+    element.forEach(int => Number.isInteger(int) ? (int % 5 === 0 ? innerArr.push(Math.pow(2, int)) : 0 ) : 0);
+    newArr.push(innerArr);
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,9 +154,13 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let findMaleAndFemale = (data) => {
-  // Solution code here...
-};
+// Write a function named findMaleAndFemale that, given the Star Wars data, below,
+// returns the names of the characters whose gender is either male or female.
+// The names should be combined into a single string with each character name separated by "and".
+// For example, "C-3PO and Luke Skywalker".
+
+// solution with assistance from Andra Steele
+let findMaleAndFemale = (data) => data.filter(filterChar => filterChar.gender === 'male' || filterChar.gender === 'female').map(mapChar => mapChar.name).join(' and ');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -139,9 +168,8 @@ CHALLENGE 6
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the character who is the shortest in height.
 ------------------------------------------------------------------------------------------------ */
 
-let findShortest = (data) => {
-  // Solution code here...
-};
+// solution with assistance from Andra Steele
+let findShortest = (data) => data.reduce((acc, cValue) => acc.height > cValue.height ? acc : cValue).name;
 
 /* ------------------------------------------------------------------------------------------------
 TESTS

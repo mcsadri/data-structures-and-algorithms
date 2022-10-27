@@ -46,7 +46,7 @@ const count = (target, input) => {
     });
   });
   return count;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -154,9 +154,13 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let findMaleAndFemale = (data) => {
-  // Solution code here...
-};
+// Write a function named findMaleAndFemale that, given the Star Wars data, below,
+// returns the names of the characters whose gender is either male or female.
+// The names should be combined into a single string with each character name separated by "and".
+// For example, "C-3PO and Luke Skywalker".
+
+// solution with assistance from Andra Steele
+let findMaleAndFemale = (data) => data.filter(filterChar => filterChar.gender === 'male' || filterChar.gender === 'female').map(mapChar => mapChar.name).join(' and ');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -164,9 +168,8 @@ CHALLENGE 6
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the character who is the shortest in height.
 ------------------------------------------------------------------------------------------------ */
 
-let findShortest = (data) => {
-  // Solution code here...
-};
+// solution with assistance from Andra Steele
+let findShortest = (data) => data.reduce((acc, cValue) => acc.height > cValue.height ? acc : cValue).name;
 
 /* ------------------------------------------------------------------------------------------------
 TESTS

@@ -9,10 +9,10 @@ Write a function named screenForNames that takes in an array of strings and uses
 * the name must contain only letter characters (white spaces are ok)
 
 ------------------------------------------------------------------------------------------------ */
+// const names = ['Mr. Brown', ' Ms. Red', 'Dr. Blue', 'Mrs.', '', 'Ms. Black', 'dr. Green', 'Mrs. Orange', 'Purple', 'Mr.  Pink'];
+// expect(screenForNames(names)).toStrictEqual(['Mr. Brown', 'Dr. Blue', 'Ms. Black', 'Mrs. Orange']);
 
-const screenForNames = (arr) => {
-  // Solution code here...
-}
+const screenForNames = (arr) => arr.filter(str => /^(Mr.|Mrs.|Ms.|Dr.)\s[A-z]+/gm.test(str));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -22,9 +22,7 @@ Write a function named toTitleCase that takes in an array of strings and returns
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
 
-const toTitleCase = (arr) => {
-  // Solution code here...
-};
+const toTitleCase = (arr) => arr.map(str => str.charAt(0).toUpperCase() + str.slice(1));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -120,7 +118,7 @@ const sortBy = (property, arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function that determines if a given URL is secure, beginning with https://
 
@@ -136,7 +134,7 @@ const isSecure = (url) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named detectTicTacToeWin that accepts a two-dimensional array of strings. Each string is guaranteed to be either "X", "O" or an empty string. Your function should check to see if any row, column, or either diagonal direction has three matching "X" or "O" symbols (non-empty strings), three-in-a-line.
 

@@ -10,11 +10,11 @@ Write a function named longestString that takes in an array of strings and retur
 // const strArray3= ['Ginger'];
 
 // attempted pair programming solution w/ Andra Steele
-const longestString = (arr) => {
-  arr.reduce((acc, cValue) => {
-    return acc.length > cValue.length ? arr.indexOf(acc) : arr.indexOf(cValue);
-  });
-};
+// const longestString = (arr) => {
+//   arr.reduce((acc, cValue) => {
+//     return acc.length > cValue.length ? arr.indexOf(acc) : arr.indexOf(cValue);
+//   });
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,9 +24,7 @@ Write a function named firstLetters that takes in an array of strings and return
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
-const firstLetters = (arr) => {
-  // Solution code here...
-};
+const firstLetters = (arr) => arr.map(str => str.substring(0,1));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -36,9 +34,7 @@ Write a function named findHappiness that takes in an array of strings and retur
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
-const findHappiness = (arr) => {
-  // Solution code here...
-};
+const findHappiness = (arr) => arr.filter(str => str.includes(')'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -90,9 +86,7 @@ CHALLENGE 7 - Stretch Goal
 Write a function named findAnything that takes in an array of strings, along with a target string. Return an array containing only those strings from the original array that contain the target string.
 ------------------------------------------------------------------------------------------------ */
 
-const findAnything = (arr, target) => {
-  // Solution code here...
-};
+const findAnything = (arr, target) => arr.filter(str => str.includes(target));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -100,9 +94,7 @@ CHALLENGE 8 - Stretch Goal
 Write a function named findEvery that takes in an array of strings, along with a target string. Return a Boolean based on whether or not every string in the array contains the target string.
 ------------------------------------------------------------------------------------------------ */
 
-const findEvery = (arr, target) => {
-  // Solution code here...
-};
+const findEvery = (arr, target) => arr.every(str => str.includes(target));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -231,7 +223,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should find all the strings that contain a given string', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
@@ -240,7 +232,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should determine whether all the strings contain a given string', () => {
     const words = ['things', 'apple pie (:)', ':)banana pie', 'missing that thing', 'cant:)aloupe is tasty'];
 

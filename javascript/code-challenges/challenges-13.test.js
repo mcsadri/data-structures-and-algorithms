@@ -10,11 +10,11 @@ Write a function named longestString that takes in an array of strings and retur
 // const strArray3= ['Ginger'];
 
 // attempted pair programming solution w/ Andra Steele
-const longestString = (arr) => {
-  arr.reduce((acc, cValue) => {
-    return acc.length > cValue.length ? arr.indexOf(acc) : arr.indexOf(cValue);
-  });
-};
+// const longestString = (arr) => {
+//   arr.reduce((acc, cValue) => {
+//     return acc.length > cValue.length ? arr.indexOf(acc) : arr.indexOf(cValue);
+//   });
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,9 +24,7 @@ Write a function named firstLetters that takes in an array of strings and return
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
-const firstLetters = (arr) => {
-  // Solution code here...
-};
+const firstLetters = (arr) => arr.map(str => str.substring(0,1));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -36,9 +34,7 @@ Write a function named findHappiness that takes in an array of strings and retur
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
-const findHappiness = (arr) => {
-  // Solution code here...
-};
+const findHappiness = (arr) => arr.filter(str => str.includes(')'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -48,9 +44,12 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-};
+// solution via class code review w/ Chris Lopez & Michael Gazaway
+const standardizePhoneNumbers = (arr) => arr.map(str => str.substr(1,3) + str.substr(6,3) + str.substr(10,5));
+
+// alternate class code review solution provided by Ethan Luxton
+// const standardizePhoneNumbers = (arr) => arr.map(e => e.slice(1,4) + e.slice(6,9) + e.slice(10));
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -60,9 +59,14 @@ Write a function named onlyOddChars that takes in a string and returns only the 
 For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
-const onlyOddChars = (str) => {
-  // Solution code here...
-};
+// solution via class code review w/ Chris Lopez & Camilla Rees
+const onlyOddChars = (str) => str.split('').filter((a,b) => b % 2 === 1).join('');
+
+// alternate class code review solution provided by Michael Gazaway
+// const onlyOddChars = (str) => [...str].filter(element => str.indexOf(element) % 2 !== 0).join('');
+
+// alternate class code review solution provided by Ethan Luxton
+// const onlyOddChars = (str) => str.split('').filter((c, i) => i % 2 !== 0).join('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -70,9 +74,11 @@ CHALLENGE 6
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
-const allHappy = (arr) => {
-  // Solution code here...
-};
+// solution via class code review w/ Chris Lopez & Ethan Luxton
+const allHappy = (arr) => arr.every(e => e.includes(':)')) ? true : false;
+
+// alternate class code review solution provided by Ezgi Coban
+// const allHappy = (arr) => arr.length === arr.filter(str => str.includes(':)')).length;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -80,9 +86,7 @@ CHALLENGE 7 - Stretch Goal
 Write a function named findAnything that takes in an array of strings, along with a target string. Return an array containing only those strings from the original array that contain the target string.
 ------------------------------------------------------------------------------------------------ */
 
-const findAnything = (arr, target) => {
-  // Solution code here...
-};
+const findAnything = (arr, target) => arr.filter(str => str.includes(target));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -90,9 +94,7 @@ CHALLENGE 8 - Stretch Goal
 Write a function named findEvery that takes in an array of strings, along with a target string. Return a Boolean based on whether or not every string in the array contains the target string.
 ------------------------------------------------------------------------------------------------ */
 
-const findEvery = (arr, target) => {
-  // Solution code here...
-};
+const findEvery = (arr, target) => arr.every(str => str.includes(target));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -221,7 +223,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should find all the strings that contain a given string', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
@@ -230,7 +232,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should determine whether all the strings contain a given string', () => {
     const words = ['things', 'apple pie (:)', ':)banana pie', 'missing that thing', 'cant:)aloupe is tasty'];
 

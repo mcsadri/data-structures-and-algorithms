@@ -96,7 +96,8 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  const idxLuke = arr.findIndex(character => character.name === 'Luke Skywalker');
+  return arr.filter(filterChar => Number(filterChar.mass) > Number(arr[idxLuke].mass)).map(mapChar => mapChar.name).join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,9 +114,8 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBy = (property, arr) => {
-  // Solution code here...
-};
+// solution taken from https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+const sortBy = (property, arr) => arr.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -129,9 +129,9 @@ http://www.insecure.com returns false because the URL is not secure
 https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
-const isSecure = (url) => {
-  // Solution code here...
-};
+
+// const isSecure = (url) => /^(https:\/\/)[A-z0-9]+(\.net|\.com|\.org)/g.test(url);
+const isSecure = (url) => /^(https:\/\/)/.test(url);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -155,6 +155,7 @@ Here is a sample board:
 const detectTicTacToeWin = (board) => {
   // Solution code here...
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS

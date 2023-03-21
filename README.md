@@ -10,7 +10,7 @@ Please follow the instructions specific to your 401 language, which can be found
 
 #### Table of Contents
 
-- [array-reverse](/python/code_challenges/class-01/README.md)
+- [array-reverse](/python/docs/class-01/README.md)
 
 ### 301 Code Challenges
 

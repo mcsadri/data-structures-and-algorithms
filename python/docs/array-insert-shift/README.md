@@ -6,7 +6,7 @@ Write a function called `insertShiftArray` which takes in an array and a value t
 Write a second function that removes an element from the middle index and shifts other elements in the array to fill the new gap.
 
 ## Whiteboard Process
-![Whiteboard Diagram](code_challenge_02.jpg)
+![Whiteboard Diagram](cc_02_whiteboard.jpg)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->

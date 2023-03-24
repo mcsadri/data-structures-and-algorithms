@@ -11,7 +11,7 @@ Please follow the instructions specific to your 401 language, which can be found
 #### Table of Contents
 
 - [array-reverse](/python/docs/class-01/README.md)
-  [array-insert-shift](/python/docs/array-insert-shift/README.md)
+- [array-insert-shift](/python/docs/array-insert-shift/README.md)
 
 ### 301 Code Challenges
 

@@ -10,8 +10,9 @@ Please follow the instructions specific to your 401 language, which can be found
 
 #### Table of Contents
 
-- [array-reverse](/python/docs/class-01/README.md)
-- [array-insert-shift](/python/docs/array-insert-shift/README.md)
+- [cc01: array-reverse](/python/docs/class-01/README.md)
+- [cc02: array-insert-shift](/python/docs/array-insert-shift/README.md)
+- [cc03: array-binary-search](/python/docs/array-binary-search/README.md)
 
 ### 301 Code Challenges
 

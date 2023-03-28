@@ -18,4 +18,4 @@ The instructions required the use of a binary search algorithm. [The number of s
 
 ## Solution
 
-<!-- Show how to run your code, and examples of it in action -->
+Collaboration: Solution taken from ['The Self-Taught Computer Scientist' by Cory Althoff](https://www.theselftaughtprogrammer.io/)

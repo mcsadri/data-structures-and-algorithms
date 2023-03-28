@@ -6,7 +6,7 @@ Write a function called `BinarySearch` which takes in 2 parameters: a sorted arr
 
 ## Stretch Goal
 
-What would you need to change if the array contained objects (sorted on a given property), and you were searching for certain property value? Write out the pseudocode.
+What would you need to change if the array contained objects (sorted on a given property), and you were searching for certain property value? Write out the pseudocode. **not attempted**
 
 ## Whiteboard Process
 
@@ -14,7 +14,7 @@ What would you need to change if the array contained objects (sorted on a given 
 
 ## Approach & Efficiency
 
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+The instructions required the use of a binary search algorithm. [The number of steps in the binary search algorithm is directly related to the logarithmic of its number of elements.](https://medium.com/@samip.sharma963/binary-search-and-its-big-o-3333d13bd6ec)
 
 ## Solution
 

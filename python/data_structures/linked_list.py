@@ -19,7 +19,7 @@ class LinkedList:
         self.head = head
 
 
-    def insert(self, value):
+    def insert(self, value=""):
         """
         param: value to be added to the linked list
         return: nothing

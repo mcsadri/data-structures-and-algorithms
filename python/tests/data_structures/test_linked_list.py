@@ -25,51 +25,72 @@ def test_populated_head():
 
 
 #@pytest.mark.skip("TODO")
+def test_unpopulated_head():
+    linked = LinkedList()
+    linked.insert()
+    assert linked.head.value == ""
+
+
+#@pytest.mark.skip("TODO")
 def test_to_string_empty():
     linked_list = LinkedList()
-
     assert str(linked_list) == "NULL"
 
 
 #@pytest.mark.skip("TODO")
 def test_to_string_single():
     linked_list = LinkedList()
-
     linked_list.insert("apple")
-
     assert str(linked_list) == "{ apple } -> NULL"
+
+
+#@pytest.mark.skip("TODO")
+def test_to_none_node_value():
+    linked_list = LinkedList()
+    linked_list.insert(None)
+    assert str(linked_list) == "{ None } -> NULL"
 
 
 #@pytest.mark.skip("TODO")
 def test_to_string_double():
     linked_list = LinkedList()
-
     linked_list.insert("apple")
-
     assert str(linked_list) == "{ apple } -> NULL"
-
     linked_list.insert("banana")
-
     assert str(linked_list) == "{ banana } -> { apple } -> NULL"
+
+
+#@pytest.mark.skip("TODO")
+def test_to_string_duplicates():
+    linked_list = LinkedList()
+    linked_list.insert("apple")
+    assert str(linked_list) == "{ apple } -> NULL"
+    linked_list.insert("apple")
+    assert str(linked_list) == "{ apple } -> { apple } -> NULL"
+
+
+#@pytest.mark.skip("TODO")
+def test_to_string_triple_with_empty_string():
+    linked_list = LinkedList()
+    linked_list.insert("apple")
+    assert str(linked_list) == "{ apple } -> NULL"
+    linked_list.insert("")
+    assert str(linked_list) == "{  } -> { apple } -> NULL"
+    linked_list.insert("banana")
+    assert str(linked_list) == "{ banana } -> {  } -> { apple } -> NULL"
 
 
 #@pytest.mark.skip("TODO")
 def test_includes_true():
     linked_list = LinkedList()
-
     linked_list.insert("apple")
-
     linked_list.insert("banana")
-
     assert linked_list.includes("apple")
 
 
 #@pytest.mark.skip("TODO")
 def test_includes_false():
     linked_list = LinkedList()
-
     linked_list.insert("apple")
-
     linked_list.insert("banana")
-
     assert not linked_list.includes("cucumber")

@@ -4,3 +4,15 @@ __pycache__
 .vscode
 poetry.lock
 .idea
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Sample Python .gitignore: https://github.com/github/gitignore/blob/main/Python.gitignore
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/

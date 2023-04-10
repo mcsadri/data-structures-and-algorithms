@@ -56,8 +56,29 @@ class LinkedList:
             raise TargetError(e)
 
 
-    def insert_after(self):
-        pass
+    def insert_after(self, search_val, new_val):
+        # solution with assistance from ChatGPT
+        new_node = Node(new_val)
+
+        try:
+            if self.head is None:
+                # If the linked list is empty, there's nothing to insert after
+                return
+
+            current = self.head
+            while current is not None:
+                if current.value == search_val:
+                    # Found a node with the matching value, insert the new node after it
+                    new_node = Node(new_val)
+                    new_node.next = current.next
+                    current.next = new_node
+                    return
+                current = current.next
+
+            raise TargetError()
+
+        except Exception as e:
+            raise TargetError(e)
 
 
     def append(self, value):

@@ -29,6 +29,73 @@ class LinkedList:
         self.head.next = old_head
 
 
+    def insert_before(self, search_val, new_val):
+        # solution with assistance from ChatGPT
+        new_node = Node(new_val)
+        try:
+            if self.head is None:
+                #return
+                raise TargetError()
+
+            if self.head.value == search_val:
+                new_node.next = self.head
+                self.head = new_node
+                return
+
+            current_node = self.head
+            while current_node.next is not None:
+                if current_node.next.value == search_val:
+                    new_node.next = current_node.next
+                    current_node.next = new_node
+                    return
+                current_node = current_node.next
+
+            raise TargetError()
+
+        except Exception as e:
+            raise TargetError(e)
+
+
+    def insert_after(self, search_val, new_val):
+        # solution with assistance from ChatGPT
+        new_node = Node(new_val)
+
+        try:
+            if self.head is None:
+                # If the linked list is empty, there's nothing to insert after
+                raise TargetError()
+
+            current = self.head
+            while current is not None:
+                if current.value == search_val:
+                    # Found a node with the matching value, insert the new node after it
+                    new_node = Node(new_val)
+                    new_node.next = current.next
+                    current.next = new_node
+                    return
+                current = current.next
+
+            raise TargetError()
+
+        except Exception as e:
+            raise TargetError(e)
+
+
+    def append(self, value):
+        # code taken from warm-up solution
+        # Create a new node with the given value.
+        new_node = Node(value)
+        # If the list is empty, set the head to the new node.
+        if self.head is None:
+            self.head = new_node
+        # Otherwise, iterate through the list until the last node is found, and set its next attribute to the new node.
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+
+
     def includes(self, value):
         """
         param: value to be checked
@@ -72,5 +139,5 @@ class Node:
         self.next = next
 
 
-class TargetError:
+class TargetError(Exception):
     pass

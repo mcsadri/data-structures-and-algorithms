@@ -63,7 +63,7 @@ class LinkedList:
         try:
             if self.head is None:
                 # If the linked list is empty, there's nothing to insert after
-                return
+                raise TargetError()
 
             current = self.head
             while current is not None:

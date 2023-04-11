@@ -78,7 +78,7 @@ def test_insert_after_empty():
         linked_list.insert_after("radish", "zucchini")
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_insert_after_missing():
     linked_list = LinkedList()
 
@@ -86,3 +86,59 @@ def test_insert_after_missing():
 
     with pytest.raises(TargetError):
         linked_list.insert_after("radish", "zucchini")
+
+
+#@pytest.mark.skip("TODO")
+def test_append_none():
+    linked_list = LinkedList()
+
+    linked_list.insert("apple")
+
+    linked_list.insert("banana")
+
+    linked_list.append(None)
+
+    assert str(linked_list) == "{ banana } -> { apple } -> { None } -> NULL"
+
+
+#@pytest.mark.skip("TODO")
+def test_insert_before_empty_string():
+    linked_list = LinkedList()
+
+    linked_list.insert("")
+
+    linked_list.insert("banana")
+
+    linked_list.insert_before("", "cucumber")
+
+    assert str(linked_list) == "{ banana } -> { cucumber } -> {  } -> NULL"
+
+
+#@pytest.mark.skip("TODO")
+def test_insert_before_with_duplicates():
+    linked_list = LinkedList()
+
+    linked_list.insert("apple")
+
+    linked_list.insert("banana")
+
+    linked_list.insert("banana")
+
+    linked_list.insert_before("banana", "cucumber")
+
+    assert str(linked_list) == "{ cucumber } -> { banana } -> { banana } -> { apple } -> NULL"
+
+
+#@pytest.mark.skip("TODO")
+def test_insert_after_with_duplicates():
+    linked_list = LinkedList()
+
+    linked_list.insert("apple")
+
+    linked_list.insert("banana")
+
+    linked_list.insert("banana")
+
+    linked_list.insert_after("banana", "cucumber")
+
+    assert str(linked_list) == "{ banana } -> { cucumber } -> { banana } -> { apple } -> NULL"

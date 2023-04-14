@@ -123,6 +123,39 @@ class LinkedList:
 
         return slow.value
 
+
+    #################################################################
+    def zip_lists(self, a, b):
+        # solution with assistance from ChatGPT
+        """
+        param: list_a: a linked list
+        param: list_b: a linked list
+        return: a new linked list where the two linked list arguments are zipped together into one linked list so that the nodes alternate between the two lists
+        """
+        # Initialize a new empty linked list
+        zipped_list = LinkedList()
+
+        # Initialize pointers to the heads of each list
+        current_a = a.head
+        current_b = b.head
+
+        # While either list has nodes left to process
+        while current_a is not None and current_b is not None:
+            # If list a has a node left to process, append it to the zipped list
+            if current_a is not None:
+                zipped_list.append(current_a.value)
+                current_a = current_a.next
+
+            # If list b has a node left to process, append it to the zipped list
+            if current_b is not None:
+                zipped_list.append(current_b.value)
+                current_b = current_b.next
+
+        # Return the new zipped list
+        return zipped_list
+    ##################################################################
+
+
     def includes(self, value):
         """
         param: value to be checked

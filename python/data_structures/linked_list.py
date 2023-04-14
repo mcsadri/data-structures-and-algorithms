@@ -102,8 +102,8 @@ class LinkedList:
         param: k: an integer representing the index from the tail of the linked list
         return: the value of the node at the kth position from the tail of the linked list
         """
-        # if k < 0:
-        #     raise ValueError("k must be a non-negative integer")
+        if k < 0:
+            raise TargetError
 
         # use two pointers to traverse the list
         fast = slow = self.head
@@ -111,9 +111,11 @@ class LinkedList:
         # move the fast pointer k steps ahead of the slow pointer
         for _ in range(k):
             if fast is None:
-                raise ValueError("k is larger than the length of the linked list")
+                raise TargetError
             fast = fast.next
 
+        if fast is None:
+            raise TargetError
         # move both pointers until the fast pointer reaches the end of the list
         while fast.next is not None:
             slow = slow.next

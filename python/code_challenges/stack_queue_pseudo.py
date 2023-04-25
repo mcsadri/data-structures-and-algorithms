@@ -16,9 +16,6 @@ class PseudoQueue:
 
     def dequeue(self):
         # Extracts a value from the PseudoQueue, using a first-in, first-out approach.
-        if self.stack_a.is_empty() and self.stack_b.is_empty():
-            raise InvalidOperationError(Exception("Method not allowed on empty collection"))
-
         if self.stack_b.is_empty():
             while not self.stack_a.is_empty():
                 self.stack_b.push(self.stack_a.pop())

@@ -6,23 +6,36 @@ class BinaryTree:
     def __init__(self, root=None):
         self.root = root
 
-    def pre_order(self, node):
-        results = []
-        results.append(self.value)
+    # solution in part adapted from Class 15 warm-up & code review
+    def pre_order(self, root=None, arr=None):
+        if root is None and arr is None:
+            root = self.root
+            arr = []
+        if root:
+            arr.append(root.value)
+            self.pre_order(root.left, arr)
+            self.pre_order(root.right, arr)
+        return arr
 
-        if node.left:
-            self.pre_order(node.left)
+    def in_order(self, root=None, arr=None):
+        if root is None and arr is None:
+            root = self.root
+            arr = []
+        if root:
+            self.in_order(root.left, arr)
+            arr.append(root.value)
+            self.in_order(root.right, arr)
+        return arr
 
-        if node.right:
-            self.pre_order(node.right)
-
-    def some_method(self):
-        # method body here
-        pass
-
-    def some_method(self):
-        # method body here
-        pass
+    def post_order(self, root=None, arr=None):
+        if root is None and arr is None:
+            root = self.root
+            arr = []
+        if root:
+            self.post_order(root.left, arr)
+            self.post_order(root.right, arr)
+            arr.append(root.value)
+        return arr
 
 
 class Node:
@@ -31,25 +44,5 @@ class Node:
         self.left = left
         self.right = right
 
-
-
-
-
-
-
-#
-# class BinaryTree:
-#     """
-#     Put docstring here
-#     """
-#
-#     def __init__(self):
-#         # initialization here
-#         pass
-#
-#     def some_method(self):
-#         # method body here
-#         pass
-#
-# class Node:
-#     pass
+    def __str__(self):
+        return str(self.value)

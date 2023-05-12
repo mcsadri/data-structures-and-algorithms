@@ -7,15 +7,33 @@ class BinaryTree:
         self.root = root
 
     # solution in part adapted from Class 15 warm-up & code review
-    def pre_order(self, root=None, arr=None):
-        if root is None and arr is None:
-            root = self.root
-            arr = []
-        if root:
-            arr.append(root.value)
-            self.pre_order(root.left, arr)
-            self.pre_order(root.right, arr)
-        return arr
+    # def pre_order(self, root=None, arr=None):
+    #     if root is None and arr is None:
+    #         root = self.root
+    #         arr = []
+    #     if root:
+    #         arr.append(root.value)
+    #         self.pre_order(root.left, arr)
+    #         self.pre_order(root.right, arr)
+    #     return arr
+
+    # alt solution using helper functions, via class demo
+    def pre_order(self):
+        traversal = []
+
+        def walk(root):
+            if root:
+                # root value operation
+                traversal.append(root.value)
+                # left
+                walk(root.left)
+                # right
+                walk(root.right)
+
+        # invoke the helper
+        walk(self.root)
+
+        return traversal
 
     def in_order(self, root=None, arr=None):
         if root is None and arr is None:

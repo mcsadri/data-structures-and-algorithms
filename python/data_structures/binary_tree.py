@@ -17,7 +17,7 @@ class BinaryTree:
     #         self.pre_order(root.right, arr)
     #     return arr
 
-    # alt solution using helper functions, via class demo
+    # alt solution using helper functions via class demo
     def pre_order(self):
         traversal = []
 
@@ -54,6 +54,23 @@ class BinaryTree:
             self.post_order(root.right, arr)
             arr.append(root.value)
         return arr
+
+    # debugged helper function solution with assistance from ChatGPT
+    def find_maximum_value(self):
+        maximum = None
+
+        def walk(root, max_val):
+            nonlocal maximum
+            if root:
+                if max_val is None:
+                    maximum = root.value
+                elif root.value > max_val:
+                    maximum = root.value
+                walk(root.left, maximum)
+                walk(root.right, maximum)
+
+        walk(self.root, maximum)
+        return maximum
 
 
 class Node:

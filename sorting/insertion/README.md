@@ -14,8 +14,8 @@ Review the pseudocode below, then trace the algorithm by stepping through the pr
 ### Implementation
 
 - Provide a visual step through for each of the sample arrays based on the provided pseudo code
-- ~Convert the pseudo-code into working code in your language~
-- ~Present a complete set of working tests~
+- Convert the pseudo-code into working code in your language
+- Present a complete set of working tests
 
 ## Insertion Sort
 
@@ -25,14 +25,14 @@ Insertion sort is a simple sorting algorithm that builds the final sorted array 
 
 ```pseudo
 Insert(int[] sorted, int value)
-  initialize i to 0
-  WHILE value > sorted[i]
-    set i to i + 1
-  WHILE i < sorted.length
-    set temp to sorted[i]
-    set sorted[i] to value
+  initialize j to 0
+  WHILE value > sorted[j]
+    set j to j + 1
+  WHILE j < sorted.length
+    set temp to sorted[j]
+    set sorted[j] to value
     set value to temp
-    set i to i + 1
+    set j to j + 1
   append value to sorted
 
 InsertionSort(int[] input)
@@ -49,3 +49,27 @@ InsertionSort(int[] input)
 - [ ] Reverse-sorted: `[20,18,12,8,5,-2]`
 - [ ] Few uniques: `[5,12,7,5,5,7]`
 - [ ] Nearly-sorted: `[2,3,5,7,13,11]`
+
+## Trace
+
+### Basic insertion sort
+
+- Sample array: `[8,4,23,42,16,15]`
+
+- Pass 1:
+![](cc26_insert_sort_01.png)
+
+- Pass 2:
+![](cc26_insert_sort_02.png)
+
+- Pass 3:
+![](cc26_insert_sort_03.png)
+
+- Pass 4:
+![](cc26_insert_sort_04.png)
+
+- Pass 5:
+![](cc26_insert_sort_06.png)
+
+- Return:
+![](cc26_insert_sort_06.png)

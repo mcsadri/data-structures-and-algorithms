@@ -87,6 +87,7 @@ def insert(sorted, value):
     value = temp
     j += 1
   sorted.append(value)
+  return sorted
 
 def insertion_sort(input):
   sorted = []

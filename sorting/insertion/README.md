@@ -73,3 +73,25 @@ InsertionSort(int[] input)
 
 - Return:
 ![](cc26_insert_sort_06.png)
+
+## Code
+
+```python
+def insert(sorted, value):
+  j = 0
+  while value > sorted[j]:
+    j += 1
+  while j  < len(sorted):
+    temp = sorted[j]
+    sorted[j] = value
+    value = temp
+    j += 1
+  sorted.append(value)
+
+def insertion_sort(input):
+  sorted = []
+  sorted[0] = input[0]
+  for i in range(1, len(input)):
+    sorted = insert(sorted, input[i])
+  return sorted
+```

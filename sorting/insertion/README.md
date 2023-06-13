@@ -69,7 +69,7 @@ InsertionSort(int[] input)
 ![](cc26_insert_sort_04.png)
 
 - Pass 5:
-![](cc26_insert_sort_06.png)
+![](cc26_insert_sort_05.png)
 
 - Return:
 ![](cc26_insert_sort_06.png)

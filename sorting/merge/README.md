@@ -67,3 +67,6 @@ ALGORITHM Merge(left, right, arr)
 ## Trace
 
 ### Merge sort with basic sample array input
+
+- Partial draft:
+![](cc27_insert_sort_00.png)

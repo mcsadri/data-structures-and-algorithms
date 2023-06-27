@@ -75,18 +75,3 @@ class Hashtable:
         Returns: int: The hash value for the key.
         """
         return self._hash(key)
-
-############################################################################
-
-# class Hashtable:
-#     """
-#     Put docstring here
-#     """
-#
-#     def __init__(self):
-#         # initialization here
-#         pass
-#
-#     def some_method(self):
-#         # method body here
-#         pass

@@ -25,7 +25,11 @@ class Graph:
         return len(self.graph)
 
     def get_neighbors(self, node):
-        pass
+        if node in self.graph:
+            node_obj = self.graph[node]
+            return [(edge.node, edge.weight) for edge in node_obj.edges]
+        else:
+            raise ValueError("Node not found in the graph")
 
 
 class Vertex:

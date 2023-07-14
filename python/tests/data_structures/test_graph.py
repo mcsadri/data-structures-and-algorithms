@@ -51,6 +51,7 @@ def test_add_edge():
     banana = g.add_node("banana")
     g.add_edge(apple, banana, 5)
     neighbors = g.get_neighbors(apple)
+    print(neighbors)
     assert len(neighbors) == 1
     assert neighbors[0].vertex.value == "banana"
     assert neighbors[0].weight == 5

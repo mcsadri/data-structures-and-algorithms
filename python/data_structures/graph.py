@@ -16,22 +16,22 @@ class Graph:
         if node1 in self.graph and node2 in self.graph:
             node1_obj = self.graph[node1]
             node2_obj = self.graph[node2]
-            node1_obj.edges.append((node2_obj, weight))
-            node2_obj.edges.append((node1_obj, weight))
-        # else:
-        #     raise ValueError("Doodah")
+            node1_obj.edges.append(Edge(node2_obj, weight))
 
     def size(self):
         return len(self.graph)
 
     def get_neighbors(self, node):
         if node in self.graph:
-            node_obj = self.graph[node]
-            return [(edge.node, edge.weight) for edge in node_obj.edges]
-        else:
-            raise ValueError("Node not found in the graph")
+            return self.graph[node]
 
 
 class Vertex:
     def __init__(self, value):
         self.value = value
+
+
+class Edge:
+    def __init__(self, vertex, weight=None):
+        self.vertex = vertex
+        self.weight = weight
